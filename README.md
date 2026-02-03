@@ -1,6 +1,6 @@
 # open5gs-handson
 
-Este repositório contém componentes do Open5GS e instruções para executá-los em máquina local. Projeto baseado no repositório oficial do Open5GS ([https://github.com/open5gs/open5gs](https://github.com/open5gs/open5gs)) e em sua documentação oficial ([https://open5gs.org/open5gs/docs/](https://open5gs.org/open5gs/docs/)).
+Este repositório contém componentes do Open5GS e instruções para executá-los em máquina local. Projeto baseado no repositório oficial do Open5GS [1] e em sua documentação oficial [2].
 
 ## Inicialização
 
@@ -48,4 +48,10 @@ Ao aplicar quaisquer mudanças em algum dos serviços, pode-se reiniciá-lo para
 ```bash
 docker-compose restart
 ```
+
+## Referências
+
+[1] Open5GS. open5gs/open5gs: Open5GS is a C-language Open Source implementation for 5G Core and EPC. Versão 2.7.2. 2025. Disponível em: [https://github.com/open5gs/open5gs](https://github.com/open5gs/open5gs). Acesso em: 31 jan. 2026.
+
+[2] Open5GS. Documentation. 2026. Disponível em: [https://open5gs.org/open5gs/docs/](https://open5gs.org/open5gs/docs/). Acesso em: 30 jan. 2026.
 
