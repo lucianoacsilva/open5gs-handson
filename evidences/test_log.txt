@@ -1,0 +1,216 @@
+[INFO  wait] --------------------------------------------------------
+[INFO  wait]  docker-compose-wait 2.9.0
+[INFO  wait] ---------------------------
+[DEBUG wait] Starting with configuration:
+[DEBUG wait]  - Hosts to be waiting for: [mongodb:27017]
+[DEBUG wait]  - Paths to be waiting for: []
+[DEBUG wait]  - Timeout before failure: 30 seconds
+[DEBUG wait]  - TCP connection timeout before retry: 5 seconds
+[DEBUG wait]  - Sleeping time before checking for hosts/paths availability: 0 seconds
+[DEBUG wait]  - Sleeping time once all hosts/paths are available: 0 seconds
+[DEBUG wait]  - Sleeping time between retries: 1 seconds
+[DEBUG wait] --------------------------------------------------------
+[INFO  wait] Checking availability of host [mongodb:27017]
+[INFO  wait] Host [mongodb:27017] not yet available...
+[INFO  wait] Host [mongodb:27017] is now available!
+[INFO  wait] --------------------------------------------------------
+[INFO  wait] docker-compose-wait - Everything's fine, the application can now start!
+[INFO  wait] --------------------------------------------------------
+ninja: Entering directory `/open5gs/build'
+ninja: no work to do.
+ 1/15 open5gs:unit / core          RUNNING
+>>> UBSAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1:print_stacktrace=1 ASAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1 LD_LIBRARY_PATH=/open5gs/build/lib/core MALLOC_PERTURB_=159 /open5gs/build/tests/core/core
+――――――――――――――――――――――――――――――――――――― ✀  ―――――――――――――――――――――――――――――――――――――
+list-test           : SUCCESS
+pool-test           : SUCCESS
+strings-test        : SUCCESS
+time-test           : SUCCESS
+conv-test           : SUCCESS
+log-test            : SUCCESS
+pkbuf-test          : SUCCESS
+memory-test         : SUCCESS
+rbtree-test         : SUCCESS
+timer-test          : SUCCESS
+thread-test         : SUCCESS
+socket-test         : SUCCESS
+queue-test          : SUCCESS
+poll-test           : SUCCESS
+tlv-test            : SUCCESS
+fsm-test            : SUCCESS
+hash-test           : SUCCESS
+uuid-test           : SUCCESS
+All tests passed.
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+ 1/15 open5gs:unit / core          OK              6.84s
+
+ 2/15 open5gs:unit / crypt         RUNNING
+>>> LD_LIBRARY_PATH=/open5gs/build/lib/crypt:/open5gs/build/lib/proto:/open5gs/build/lib/core MALLOC_PERTURB_=102 ASAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1 UBSAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1:print_stacktrace=1 /open5gs/build/tests/crypt/crypt
+――――――――――――――――――――――――――――――――――――― ✀  ―――――――――――――――――――――――――――――――――――――
+aes-test            : SUCCESS
+sha-test            : SUCCESS
+base64-test         : SUCCESS
+ecies-test          : SUCCESS
+All tests passed.
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+ 2/15 open5gs:unit / crypt         OK              0.07s
+
+ 3/15 open5gs:app / sctp           RUNNING
+>>> LD_LIBRARY_PATH=/open5gs/build/lib/sctp:/open5gs/build/lib/app:/open5gs/build/lib/proto:/open5gs/build/lib/core MALLOC_PERTURB_=50 ASAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1 UBSAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1:print_stacktrace=1 /open5gs/build/tests/sctp/sctp
+――――――――――――――――――――――――――――――――――――― ✀  ―――――――――――――――――――――――――――――――――――――
+sctp-test           : SUCCESS
+All tests passed.
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+ 3/15 open5gs:app / sctp           OK              0.01s
+
+ 4/15 open5gs:unit / unit          RUNNING
+>>> LD_LIBRARY_PATH=/open5gs/build/lib/asn1c/ngap:/open5gs/build/lib/gtp:/open5gs/build/lib/crypt:/open5gs/build/lib/sbi:/open5gs/build/lib/nas/eps:/open5gs/build/lib/asn1c/common:/open5gs/build/lib/sbi/openapi:/open5gs/build/lib/s1ap:/open5gs/build/lib/app:/open5gs/build/lib/proto:/open5gs/build/lib/ipfw:/open5gs/build/lib/ngap:/open5gs/build/lib/asn1c/s1ap:/open5gs/build/lib/nas/common:/open5gs/build/lib/core:/open5gs/build/lib/asn1c/util ASAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1 MALLOC_PERTURB_=155 UBSAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1:print_stacktrace=1 /open5gs/build/tests/unit/unit
+――――――――――――――――――――――――――――――――――――― ✀  ―――――――――――――――――――――――――――――――――――――
+proto-message-test  : SUCCESS
+s1ap-message-test   : SUCCESS
+nas-message-test    : SUCCESS
+gtp-message-test    : SUCCESS
+ngap-message-test   : SUCCESS
+sbi-message-test    : SUCCESS
+security-test       : SUCCESS
+crash-test          : SUCCESS
+All tests passed.
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+ 4/15 open5gs:unit / unit          OK              0.06s
+
+ 5/15 open5gs:5gc / registration   RUNNING
+>>> MALLOC_PERTURB_=59 ASAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1 LD_LIBRARY_PATH=/open5gs/build/lib/gtp:/open5gs/build/lib/nas/eps:/open5gs/build/subprojects/freeDiameter/libfdproto:/open5gs/build/lib/asn1c/util:/open5gs/build/lib/sbi:/open5gs/build/subprojects/freeDiameter/libfdcore:/open5gs/build/lib/ipfw:/open5gs/build/lib/ngap:/open5gs/build/lib/diameter/rx:/open5gs/build/lib/sbi/openapi:/open5gs/build/lib/asn1c/common:/open5gs/build/lib/diameter/cx:/open5gs/build/lib/proto:/open5gs/build/lib/asn1c/s1ap:/open5gs/build/lib/sctp:/open5gs/build/lib/diameter/swx:/open5gs/build/lib/diameter/s6a:/open5gs/build/lib/asn1c/ngap:/open5gs/build/lib/nas/5gs:/open5gs/build/lib/crypt:/open5gs/build/lib/app:/open5gs/build/lib/s1ap:/open5gs/build/lib/dbi:/open5gs/build/lib/diameter/s6b:/open5gs/build/lib/nas/common:/open5gs/build/lib/core:/open5gs/build/lib/diameter/common UBSAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1:print_stacktrace=1 /open5gs/build/tests/registration/registration
+――――――――――――――――――――――――――――――――――――― ✀  ―――――――――――――――――――――――――――――――――――――
+simple-test         : SUCCESS
+guti-test           : SUCCESS
+auth-test           : SUCCESS
+ecc-test            : SUCCESS
+idle-test           : SUCCESS
+dereg-test          : SUCCESS
+identity-test       : SUCCESS
+gmm-status-test     : SUCCESS
+ue-context-test     : SUCCESS
+reset-test          : SUCCESS
+multi-ue-test       : SUCCESS
+All tests passed.
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+ 5/15 open5gs:5gc / registration   OK             17.86s
+
+ 6/15 open5gs:5gc / vonr           RUNNING
+>>> MALLOC_PERTURB_=127 UBSAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1:print_stacktrace=1 LD_LIBRARY_PATH=/open5gs/build/lib/gtp:/open5gs/build/lib/nas/eps:/open5gs/build/subprojects/freeDiameter/libfdproto:/open5gs/build/lib/asn1c/util:/open5gs/build/lib/sbi:/open5gs/build/subprojects/freeDiameter/libfdcore:/open5gs/build/lib/ipfw:/open5gs/build/lib/ngap:/open5gs/build/lib/diameter/rx:/open5gs/build/lib/sbi/openapi:/open5gs/build/lib/asn1c/common:/open5gs/build/lib/diameter/cx:/open5gs/build/lib/proto:/open5gs/build/lib/asn1c/s1ap:/open5gs/build/lib/sctp:/open5gs/build/lib/diameter/swx:/open5gs/build/lib/diameter/s6a:/open5gs/build/lib/asn1c/ngap:/open5gs/build/lib/nas/5gs:/open5gs/build/lib/crypt:/open5gs/build/lib/app:/open5gs/build/lib/s1ap:/open5gs/build/lib/dbi:/open5gs/build/lib/diameter/s6b:/open5gs/build/lib/nas/common:/open5gs/build/lib/core:/open5gs/build/lib/diameter/common ASAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1 /open5gs/build/tests/vonr/vonr
+――――――――――――――――――――――――――――――――――――― ✀  ―――――――――――――――――――――――――――――――――――――
+qos-flow-test       : SUCCESS
+session-test        : SUCCESS
+simple-test         : SUCCESS
+af-test             : SUCCESS
+video-test          : SUCCESS
+All tests passed.
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+ 6/15 open5gs:5gc / vonr           OK             16.91s
+
+ 7/15 open5gs:5gc / slice          RUNNING
+>>> ASAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1 LD_LIBRARY_PATH=/open5gs/build/lib/gtp:/open5gs/build/lib/nas/eps:/open5gs/build/subprojects/freeDiameter/libfdproto:/open5gs/build/lib/asn1c/util:/open5gs/build/lib/sbi:/open5gs/build/subprojects/freeDiameter/libfdcore:/open5gs/build/lib/ipfw:/open5gs/build/lib/ngap:/open5gs/build/lib/diameter/rx:/open5gs/build/lib/sbi/openapi:/open5gs/build/lib/asn1c/common:/open5gs/build/lib/diameter/cx:/open5gs/build/lib/proto:/open5gs/build/lib/asn1c/s1ap:/open5gs/build/lib/sctp:/open5gs/build/lib/diameter/swx:/open5gs/build/lib/diameter/s6a:/open5gs/build/lib/asn1c/ngap:/open5gs/build/lib/nas/5gs:/open5gs/build/lib/crypt:/open5gs/build/lib/app:/open5gs/build/lib/s1ap:/open5gs/build/lib/dbi:/open5gs/build/lib/diameter/s6b:/open5gs/build/lib/nas/common:/open5gs/build/lib/core:/open5gs/build/lib/diameter/common MALLOC_PERTURB_=83 UBSAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1:print_stacktrace=1 /open5gs/build/tests/slice/slice
+――――――――――――――――――――――――――――――――――――― ✀  ―――――――――――――――――――――――――――――――――――――
+same-dnn-test       : SUCCESS
+different-dnn-test  : SUCCESS
+paging-test         : SUCCESS
+All tests passed.
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+ 7/15 open5gs:5gc / slice          OK             14.70s
+
+ 8/15 open5gs:epc / attach         RUNNING
+>>> ASAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1 UBSAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1:print_stacktrace=1 LD_LIBRARY_PATH=/open5gs/build/lib/gtp:/open5gs/build/lib/nas/eps:/open5gs/build/subprojects/freeDiameter/libfdproto:/open5gs/build/lib/asn1c/util:/open5gs/build/lib/sbi:/open5gs/build/subprojects/freeDiameter/libfdcore:/open5gs/build/lib/ipfw:/open5gs/build/lib/ngap:/open5gs/build/lib/diameter/rx:/open5gs/build/lib/sbi/openapi:/open5gs/build/lib/asn1c/common:/open5gs/build/lib/diameter/cx:/open5gs/build/lib/proto:/open5gs/build/lib/asn1c/s1ap:/open5gs/build/lib/sctp:/open5gs/build/lib/diameter/swx:/open5gs/build/lib/diameter/s6a:/open5gs/build/lib/asn1c/ngap:/open5gs/build/lib/nas/5gs:/open5gs/build/lib/crypt:/open5gs/build/lib/app:/open5gs/build/lib/s1ap:/open5gs/build/lib/dbi:/open5gs/build/lib/diameter/s6b:/open5gs/build/lib/nas/common:/open5gs/build/lib/core:/open5gs/build/lib/diameter/common MALLOC_PERTURB_=90 /open5gs/build/tests/attach/attach
+――――――――――――――――――――――――――――――――――――― ✀  ―――――――――――――――――――――――――――――――――――――
+s1setup-test        : SUCCESS
+simple-test         : SUCCESS
+guti-test           : SUCCESS
+auth-test           : SUCCESS
+idle-test           : SUCCESS
+emm-status-test     : SUCCESS
+ue-context-test     : SUCCESS
+reset-test          : SUCCESS
+issues-test         : SUCCESS
+crash-test          : SUCCESS
+All tests passed.
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+ 8/15 open5gs:epc / attach         OK             12.35s
+
+ 9/15 open5gs:epc / volte          RUNNING
+>>> ASAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1 LD_LIBRARY_PATH=/open5gs/build/lib/gtp:/open5gs/build/lib/nas/eps:/open5gs/build/subprojects/freeDiameter/libfdproto:/open5gs/build/lib/asn1c/util:/open5gs/build/lib/sbi:/open5gs/build/subprojects/freeDiameter/libfdcore:/open5gs/build/lib/ipfw:/open5gs/build/lib/ngap:/open5gs/build/lib/diameter/rx:/open5gs/build/lib/sbi/openapi:/open5gs/build/lib/asn1c/common:/open5gs/build/lib/diameter/cx:/open5gs/build/lib/proto:/open5gs/build/lib/asn1c/s1ap:/open5gs/build/lib/sctp:/open5gs/build/lib/diameter/swx:/open5gs/build/lib/diameter/s6a:/open5gs/build/lib/asn1c/ngap:/open5gs/build/lib/nas/5gs:/open5gs/build/lib/crypt:/open5gs/build/lib/app:/open5gs/build/lib/s1ap:/open5gs/build/lib/dbi:/open5gs/build/lib/diameter/s6b:/open5gs/build/lib/nas/common:/open5gs/build/lib/core:/open5gs/build/lib/diameter/common MALLOC_PERTURB_=153 UBSAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1:print_stacktrace=1 /open5gs/build/tests/volte/volte
+――――――――――――――――――――――――――――――――――――― ✀  ―――――――――――――――――――――――――――――――――――――
+bearer-test         : SUCCESS
+session-test        : SUCCESS
+simple-test         : SUCCESS
+rx-test             : SUCCESS
+video-test          : SUCCESS
+cx-test             : SUCCESS
+All tests passed.
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+ 9/15 open5gs:epc / volte          OK             15.14s
+
+10/15 open5gs:epc / csfb           RUNNING
+>>> ASAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1 UBSAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1:print_stacktrace=1 LD_LIBRARY_PATH=/open5gs/build/lib/gtp:/open5gs/build/lib/nas/eps:/open5gs/build/subprojects/freeDiameter/libfdproto:/open5gs/build/lib/asn1c/util:/open5gs/build/lib/sbi:/open5gs/build/subprojects/freeDiameter/libfdcore:/open5gs/build/lib/ipfw:/open5gs/build/lib/ngap:/open5gs/build/lib/diameter/rx:/open5gs/build/lib/sbi/openapi:/open5gs/build/lib/asn1c/common:/open5gs/build/lib/diameter/cx:/open5gs/build/lib/proto:/open5gs/build/lib/asn1c/s1ap:/open5gs/build/lib/sctp:/open5gs/build/lib/diameter/swx:/open5gs/build/lib/diameter/s6a:/open5gs/build/lib/asn1c/ngap:/open5gs/build/lib/nas/5gs:/open5gs/build/lib/crypt:/open5gs/build/lib/app:/open5gs/build/lib/s1ap:/open5gs/build/lib/dbi:/open5gs/build/lib/diameter/s6b:/open5gs/build/lib/nas/common:/open5gs/build/lib/core:/open5gs/build/lib/diameter/common MALLOC_PERTURB_=15 /open5gs/build/tests/csfb/csfb
+――――――――――――――――――――――――――――――――――――― ✀  ―――――――――――――――――――――――――――――――――――――
+mo-idle-test        : SUCCESS
+mt-idle-test        : SUCCESS
+mo-active-test      : SUCCESS
+mt-active-test      : SUCCESS
+mo-sms-test         : SUCCESS
+mt-sms-test         : SUCCESS
+tau-test            : SUCCESS
+crash-test          : SUCCESS
+All tests passed.
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+10/15 open5gs:epc / csfb           OK              9.71s
+
+11/15 open5gs:app / 310014         RUNNING
+>>> MALLOC_PERTURB_=131 UBSAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1:print_stacktrace=1 LD_LIBRARY_PATH=/open5gs/build/lib/gtp:/open5gs/build/lib/nas/eps:/open5gs/build/subprojects/freeDiameter/libfdproto:/open5gs/build/lib/asn1c/util:/open5gs/build/lib/sbi:/open5gs/build/subprojects/freeDiameter/libfdcore:/open5gs/build/lib/ipfw:/open5gs/build/lib/ngap:/open5gs/build/lib/diameter/rx:/open5gs/build/lib/sbi/openapi:/open5gs/build/lib/asn1c/common:/open5gs/build/lib/diameter/cx:/open5gs/build/lib/proto:/open5gs/build/lib/asn1c/s1ap:/open5gs/build/lib/sctp:/open5gs/build/lib/diameter/swx:/open5gs/build/lib/diameter/s6a:/open5gs/build/lib/asn1c/ngap:/open5gs/build/lib/nas/5gs:/open5gs/build/lib/crypt:/open5gs/build/lib/app:/open5gs/build/lib/s1ap:/open5gs/build/lib/dbi:/open5gs/build/lib/diameter/s6b:/open5gs/build/lib/nas/common:/open5gs/build/lib/core:/open5gs/build/lib/diameter/common ASAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1 /open5gs/build/tests/310014/310014
+――――――――――――――――――――――――――――――――――――― ✀  ―――――――――――――――――――――――――――――――――――――
+epc-test            : SUCCESS
+All tests passed.
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+11/15 open5gs:app / 310014         OK              6.13s
+
+12/15 open5gs:app / handover       RUNNING
+>>> ASAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1 LD_LIBRARY_PATH=/open5gs/build/lib/gtp:/open5gs/build/lib/nas/eps:/open5gs/build/subprojects/freeDiameter/libfdproto:/open5gs/build/lib/asn1c/util:/open5gs/build/lib/sbi:/open5gs/build/subprojects/freeDiameter/libfdcore:/open5gs/build/lib/ipfw:/open5gs/build/lib/ngap:/open5gs/build/lib/diameter/rx:/open5gs/build/lib/sbi/openapi:/open5gs/build/lib/asn1c/common:/open5gs/build/lib/diameter/cx:/open5gs/build/lib/proto:/open5gs/build/lib/asn1c/s1ap:/open5gs/build/lib/sctp:/open5gs/build/lib/diameter/swx:/open5gs/build/lib/diameter/s6a:/open5gs/build/lib/asn1c/ngap:/open5gs/build/lib/nas/5gs:/open5gs/build/lib/crypt:/open5gs/build/lib/app:/open5gs/build/lib/s1ap:/open5gs/build/lib/dbi:/open5gs/build/lib/diameter/s6b:/open5gs/build/lib/nas/common:/open5gs/build/lib/core:/open5gs/build/lib/diameter/common MALLOC_PERTURB_=235 UBSAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1:print_stacktrace=1 /open5gs/build/tests/handover/handover
+――――――――――――――――――――――――――――――――――――― ✀  ―――――――――――――――――――――――――――――――――――――
+epc-x2-test         : SUCCESS
+epc-s1-test         : SUCCESS
+5gc-xn-test         : SUCCESS
+5gc-n2-test         : SUCCESS
+All tests passed.
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+12/15 open5gs:app / handover       OK             13.49s
+
+13/15 open5gs:epc / non3gpp        RUNNING
+>>> ASAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1 MALLOC_PERTURB_=37 LD_LIBRARY_PATH=/open5gs/build/lib/gtp:/open5gs/build/lib/nas/eps:/open5gs/build/subprojects/freeDiameter/libfdproto:/open5gs/build/lib/asn1c/util:/open5gs/build/lib/sbi:/open5gs/build/subprojects/freeDiameter/libfdcore:/open5gs/build/lib/ipfw:/open5gs/build/lib/ngap:/open5gs/build/lib/diameter/rx:/open5gs/build/lib/sbi/openapi:/open5gs/build/lib/asn1c/common:/open5gs/build/lib/diameter/cx:/open5gs/build/lib/proto:/open5gs/build/lib/asn1c/s1ap:/open5gs/build/lib/sctp:/open5gs/build/lib/diameter/swx:/open5gs/build/lib/diameter/s6a:/open5gs/build/lib/asn1c/ngap:/open5gs/build/lib/nas/5gs:/open5gs/build/lib/crypt:/open5gs/build/lib/app:/open5gs/build/lib/s1ap:/open5gs/build/lib/dbi:/open5gs/build/lib/diameter/s6b:/open5gs/build/lib/nas/common:/open5gs/build/lib/core:/open5gs/build/lib/diameter/common UBSAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1:print_stacktrace=1 /open5gs/build/tests/non3gpp/non3gpp
+――――――――――――――――――――――――――――――――――――― ✀  ―――――――――――――――――――――――――――――――――――――
+epdg-test           : SUCCESS
+All tests passed.
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+13/15 open5gs:epc / non3gpp        OK              7.08s
+
+14/15 open5gs:5gc / transfer       RUNNING
+>>> ASAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1 LD_LIBRARY_PATH=/open5gs/build/lib/gtp:/open5gs/build/lib/nas/eps:/open5gs/build/subprojects/freeDiameter/libfdproto:/open5gs/build/lib/asn1c/util:/open5gs/build/lib/sbi:/open5gs/build/subprojects/freeDiameter/libfdcore:/open5gs/build/lib/ipfw:/open5gs/build/lib/ngap:/open5gs/build/lib/diameter/rx:/open5gs/build/lib/sbi/openapi:/open5gs/build/lib/asn1c/common:/open5gs/build/lib/diameter/cx:/open5gs/build/lib/proto:/open5gs/build/lib/asn1c/s1ap:/open5gs/build/lib/sctp:/open5gs/build/lib/diameter/swx:/open5gs/build/lib/diameter/s6a:/open5gs/build/lib/asn1c/ngap:/open5gs/build/lib/nas/5gs:/open5gs/build/lib/crypt:/open5gs/build/lib/app:/open5gs/build/lib/s1ap:/open5gs/build/lib/dbi:/open5gs/build/lib/diameter/s6b:/open5gs/build/lib/nas/common:/open5gs/build/lib/core:/open5gs/build/lib/diameter/common MALLOC_PERTURB_=153 UBSAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1:print_stacktrace=1 /open5gs/build/tests/transfer/transfer
+――――――――――――――――――――――――――――――――――――― ✀  ―――――――――――――――――――――――――――――――――――――
+ue-context-transfer-test: SUCCESS
+All tests passed.
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+14/15 open5gs:5gc / transfer       OK              9.00s
+
+15/15 open5gs:5gc / transfer-error RUNNING
+>>> ASAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1 LD_LIBRARY_PATH=/open5gs/build/lib/gtp:/open5gs/build/lib/nas/eps:/open5gs/build/subprojects/freeDiameter/libfdproto:/open5gs/build/lib/asn1c/util:/open5gs/build/lib/sbi:/open5gs/build/subprojects/freeDiameter/libfdcore:/open5gs/build/lib/ipfw:/open5gs/build/lib/ngap:/open5gs/build/lib/diameter/rx:/open5gs/build/lib/sbi/openapi:/open5gs/build/lib/asn1c/common:/open5gs/build/lib/diameter/cx:/open5gs/build/lib/proto:/open5gs/build/lib/asn1c/s1ap:/open5gs/build/lib/sctp:/open5gs/build/lib/diameter/swx:/open5gs/build/lib/diameter/s6a:/open5gs/build/lib/asn1c/ngap:/open5gs/build/lib/nas/5gs:/open5gs/build/lib/crypt:/open5gs/build/lib/app:/open5gs/build/lib/s1ap:/open5gs/build/lib/dbi:/open5gs/build/lib/diameter/s6b:/open5gs/build/lib/nas/common:/open5gs/build/lib/core:/open5gs/build/lib/diameter/common MALLOC_PERTURB_=243 UBSAN_OPTIONS=halt_on_error=1:abort_on_error=1:print_summary=1:print_stacktrace=1 /open5gs/build/tests/transfer/transfer-error
+――――――――――――――――――――――――――――――――――――― ✀  ―――――――――――――――――――――――――――――――――――――
+ue-context-transfer-error-case-test: SUCCESS
+All tests passed.
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+15/15 open5gs:5gc / transfer-error OK              4.50s
+
+
+Ok:                 15
+Expected Fail:      0
+Fail:               0
+Unexpected Pass:    0
+Skipped:            0
+Timeout:            0
+
+Full log written to /open5gs/build/meson-logs/testlog.txt
