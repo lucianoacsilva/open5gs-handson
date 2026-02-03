@@ -1,6 +1,6 @@
 # open5gs-handson
 
-Este repositório contém componentes do Open5GS e instruções para executá-los em máquina local.
+Este repositório contém componentes do Open5GS e instruções para executá-los em máquina local. Projeto baseado no repositório oficial do Open5GS ([https://github.com/open5gs/open5gs](https://github.com/open5gs/open5gs)) e em sua documentação oficial ([https://open5gs.org/open5gs/docs/](https://open5gs.org/open5gs/docs/)).
 
 ## Inicialização
 
