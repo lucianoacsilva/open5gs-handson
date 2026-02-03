@@ -64,12 +64,32 @@ services:
       - net.ipv6.conf.all.disable_ipv6=0
     volumes:
       - config:/etc/open5gs
-    ports:
-      - "9090:9090"
-      - "7777:7777"
+    expose:
+      - "2152/udp"
+      - "38412/sctp"
+      - "80"
     hostname: open5gs-run
-    command: /bin/bash -c "/root/setup.sh; /usr/local/bin/open5gs-pcrfd -D; /usr/local/bin/open5gs-hssd -D; /usr/local/bin/open5gs-mmed -D; /usr/local/bin/open5gs-nrfd -D;  /usr/local/bin/open5gs-scpd -D; /usr/local/bin/open5gs-amfd -D; /usr/local/bin/open5gs-smfd -D; /usr/local/bin/open5gs-upfd"
+    command: >
+      /bin/bash -c "
+        /root/setup.sh;
+        /usr/local/bin/open5gs-pcrfd -D;
+        /usr/local/bin/open5gs-hssd -D;
+        /usr/local/bin/open5gs-mmed -D;
+        /usr/local/bin/open5gs-nrfd -D;
+        /usr/local/bin/open5gs-scpd -D;
+        /usr/local/bin/open5gs-amfd -D;
+        /usr/local/bin/open5gs-smfd -D;
+        /usr/local/bin/open5gs-upfd -D;
+        /usr/local/bin/open5gs-ausfd -D;
+        /usr/local/bin/open5gs-udmd -D;
+        /usr/local/bin/open5gs-udrd -D;
+        /usr/local/bin/open5gs-pcfd -D;
+        /usr/local/bin/open5gs-nssfd -D;
+        /usr/local/bin/open5gs-bsfd -D;
+        /usr/local/bin/open5gs-sgwcd -D;
+        /usr/local/bin/open5gs-sgwud;
 
+      "
   test:
     image: ${USER}/${DIST-ubuntu}-${TAG-latest}-open5gs-build
     depends_on:
