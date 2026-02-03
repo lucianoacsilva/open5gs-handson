@@ -1,44 +1,51 @@
-<p align="center"><a href="https://open5gs.org" target="_blank" rel="noopener noreferrer"><img width="100" src="https://open5gs.org/assets/img/open5gs-logo-only.png" alt="Open5GS logo"></a></p>
+# open5gs-handson
 
-## Getting Started
+Este repositório contém componentes do Open5GS e instruções para executá-los em máquina local.
 
-Please follow the [documentation](https://open5gs.org/open5gs/docs/) at [open5gs.org](https://open5gs.org/)!
+## Inicialização
 
-## Sponsors
+Para inicializar os componentes, migre para o diretório **docker** e execute:
 
-If you find Open5GS useful for work, please consider supporting this Open Source project by [Becoming a sponsor](https://github.com/sponsors/acetcom). To manage the funding transactions transparently, you can donate through [OpenCollective](https://opencollective.com/open5gs).
+```bash
+docker-compose up -d
+```
 
-<p align="center">
-  <h3 align="center">Special Sponsor</h3>
-</p>
+Caso as imagens não estejam instaladas no ambiente Docker do usuário, ele vai baixar as existentes (no caso do serviço do MongoDB) e realizar o **build** das necessárias (para os outros serviços). Após o processo, espera-se obter os seguintes serviços ao executar o comando **docker ps**:
 
-<p align="center">
-  <a target="_blank" href="https://mobi.com">
-  <img alt="special sponsor mobi" src="https://open5gs.org/assets/img/mobi-open5GS.png" width="400">
-  </a>
-</p>
+![Processos após execução de docker-compose up -d](./evidences/img/docker_ps_with_test.png)
 
-<p align="center">
-  <a target="_blank" href="https://open5gs.org/#sponsors">
-      <img alt="sponsors" src="https://open5gs.org/assets/img/sponsors.svg">
-  </a>
-</p>
+Segue uma breve descrição dos contêineres em execução:
 
-## Community
+- **docker_run_1**: *core* da rede RAN 5G;
+- **docker_test_1**: contêiner de teste das funcionalidades do *core* (finaliza depois de um certo tempo). Um exemplo de seus logs pode ser visto em [evidences/logs/test_log.txt](./evidences/log/test_log.txt)
+- **open5gs-webui**: interface gráfica para gerenciamento e visualização dos componentes da rede;
+- **open5gs-mongodb**: base de dados Mongo DB que persiste dados das funções de *core* da rede (e da qual a aplicação de interface gráfica também faz leituras)
 
-- Problem with Open5GS can be filed as [issues](https://github.com/open5gs/open5gs/issues) in this repository.
-- Other topics related to this project are happening on the [discussions](https://github.com/open5gs/open5gs/discussions).
-- Voice and text chat are available in Open5GS's [Discord](https://discordapp.com/) workspace. Use [this link](https://discord.gg/GreNkuc) to get started.
+Após a finalização do contêiner de teste, o comando **docker ps** retorna os outros três restantes:
 
-## Contributing
+![Processos após finalização do contêiner de teste](./evidences/img/docker_ps.png)
 
-If you're contributing through a pull request to Open5GS project on GitHub, please read the [Contributor License Agreement](https://open5gs.org/open5gs/cla/) in advance.
+A captura abaixo mostra exemplos de *logs* da instância MongoDB em funcionamento (após a execução do contêiner de teste):
 
-## License
+![Logs do Mongo DB](./evidences/img/mongodb_logs.png)
 
-- Open5GS Open Source files are made available under the terms of the GNU Affero General Public License ([GNU AGPL v3.0](https://www.gnu.org/licenses/agpl-3.0.html)).
-- [Commercial licenses](https://open5gs.org/open5gs/support/) are also available from [NewPlane](https://newplane.io/) at [sales@newplane.io](mailto:sales@newplane.io).
+A captura abaixo mostra *logs* do *core* em execução. O arquivo completo com os *logs* pode ser visualizado em [evidences/logs/core_log.txt](./evidences/log/core_log.txt)
 
-## Support
+![Logs do Core](./evidences/img/core_logs.png)
 
-Technical support and customized services for Open5GS are provided by [NewPlane](https://newplane.io/) at [support@newplane.io](mailto:support@newplane.io).
+Pode-se verificar a conectividade e exposição das funções de rede de dentro do contêiner com o comando **ss**, como mostrado na captura abaixo:
+
+![Comando SS](./evidences/img/ss_command.png)
+
+Para desativar os serviços em execução, execute, no diretório **docker**:
+
+```bash
+docker-compose down -d
+```
+
+Ao aplicar quaisquer mudanças em algum dos serviços, pode-se reiniciá-lo para refleti-las, executando:
+
+```bash
+docker-compose restart
+```
+
