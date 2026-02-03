@@ -53,6 +53,9 @@ services:
     depends_on:
       - mongodb
       - build
+    environment:
+      - DB_URI=mongodb://mongodb/open5gs
+      - WAIT_HOSTS=mongodb:27017
     cap_add:
       - NET_ADMIN
     devices:
@@ -63,8 +66,9 @@ services:
       - config:/etc/open5gs
     ports:
       - "9090:9090"
+      - "7777:7777"
     hostname: open5gs-run
-    command: /bin/bash -c "/root/setup.sh; /usr/local/bin/open5gs-pcrfd -D; /usr/local/bin/open5gs-pgwd -D; /usr/local/bin/open5gs-sgwd -D; /usr/local/bin/open5gs-hssd -D; /usr/local/bin/open5gs-mmed"
+    command: /bin/bash -c "/root/setup.sh; /usr/local/bin/open5gs-pcrfd -D; /usr/local/bin/open5gs-hssd -D; /usr/local/bin/open5gs-mmed -D; /usr/local/bin/open5gs-nrfd -D;  /usr/local/bin/open5gs-scpd -D; /usr/local/bin/open5gs-amfd -D; /usr/local/bin/open5gs-smfd -D; /usr/local/bin/open5gs-upfd"
 
   test:
     image: ${USER}/${DIST-ubuntu}-${TAG-latest}-open5gs-build
